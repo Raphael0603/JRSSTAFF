@@ -65,9 +65,10 @@ export default function Dashboard() {
             </div>
             {/* END OF SIDEBAR CONTENT */}
 
-            {/* MAIN BODY */}
+            {/* BODY */}
             <main className="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen transition-all main">
-                {/* HORIZONTAL NAVBAR */}
+
+                {/* STRAIGHT HORIZONTAL NAVBAR */}
                 <div className="py-2 px-6 bg-yellow-400 flex items-center min-h-10 shadow-md shadow-black/5 sticky top-0 left-0 z-30">
                     <button type="button" className="text-lg text-gray-600 sidebar-toggle">
                         <i className="ri-menu-line"></i>
@@ -75,54 +76,12 @@ export default function Dashboard() {
                     <a href="#" className="text-xs ml-8">joms@ustp.edu.ph +384-3478-984</a>
                     <a href="#" className="text-xs font-semibold underline ml-auto">[Take USTP Harmonized Client Satisfaction Survey Online Version]</a>
                 </div>
-                {/* END OF HORIZONTAL NAVBAR */}
+                {/* END OF STRAIGHTHORIZONTAL NAVBAR */}
 
                 {/* MAIN BODY CONTENT */}
-                {/* TEXT DASHBOARD */}
-                <p className="font-bold text-xl py-4 px-6 font-inter">DASHBOARD</p>
+                {/* END OF MAIN BODY CONTENT */}
 
-                <div className="p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-5">
-                        {/* CARD: PENDING */}
-                        <div className="bg-yellow-400 border-gray-100 p-5 shadow-md shadow-black/5 flex flex-col justify-between">
-                            <div className="text-xl font-semibold">Pending</div>
-                            <div className="text-2xl self-end">0</div>
-                        </div>
-
-                        {/* CARD: APPROVED */}
-                        <div className="bg-sky-200 border-gray-100 p-5 shadow-md shadow-black/5 flex flex-col justify-between">
-                            <div className="text-xl font-semibold">Approved</div>
-                            <div className="text-2xl self-end">0</div>
-                        </div>
-
-                        {/* CARD: COMPLETED */}
-                        <div className="bg-green-400 border-gray-100 p-5 shadow-md shadow-black/5 flex flex-col justify-between">
-                            <div className="text-xl font-semibold">Completed</div>
-                            <div className="text-2xl self-end">0</div>
-                        </div>
-
-                        {/* CARD: CANCELLED */}
-                        <div className="bg-red-400 border-gray-100 p-5 shadow-md shadow-black/5 flex flex-col justify-between">
-                            <div className="text-xl font-semibold">Cancelled</div>
-                            <div className="text-2xl self-end">0</div>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-5">
-                        {/* NOTIFICATION */}
-                        <div className="bg-white h-60 border-gray-100 lg:col-span-3 shadow-md shadow-black/5 flex flex-col justify-between">
-                            <div className="bg-yellow-400">
-                                <div className="text-xl p-1 ml-2  text-black font-semibold">Notifications</div>
-                            </div>
-                            
-                        </div>
-                        {/* CALENDAR */}
-                        <div className="bg-white border-gray-100 p-5 lg:col-span-1 shadow-md shadow-black/5 flex flex-col justify-between">
-                            <div className="text-xl text-black font-semibold">CALENDAR</div>
-                        </div>
-                    </div>
-                </div>
-                {/* END OF MAIN CONTENT */}
+                {/* END OF BODY */}
             </main>
         </body>
     );
