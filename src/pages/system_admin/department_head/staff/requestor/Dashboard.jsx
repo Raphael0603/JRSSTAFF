@@ -1,3 +1,4 @@
+import React from "react";
 import "remixicon/fonts/remixicon.css";
 import LogoJRS from "/src/assets/images/logo_JRS.png";
 import ProfilePic from "/src/assets/images/BabyKaren.jpg";
@@ -130,7 +131,6 @@ export default function Dashboard() {
         {/* TEXT DASHBOARD */}
         <p className="font-bold text-xl py-4 px-6 font-inter">DASHBOARD</p>
 
-        {/* CARDS */}
         <div className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-5">
             {/* CARD: PENDING */}
