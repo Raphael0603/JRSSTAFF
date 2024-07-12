@@ -42,7 +42,7 @@ export default function SideBarIcons() {
             alt="Schedules Icon"
             className="w-4 h-4 mr-3"
           />
-          <span className="text-sm">Schedules</span>
+          <span className="text-sm">Job Request</span>
         </a>
       </li>
       {/* SIDEBAR: REQUEST HISTORY */}
@@ -56,7 +56,7 @@ export default function SideBarIcons() {
             alt="Request History Icon"
             className="w-4 h-4 mr-3"
           />
-          <span className="text-sm">Request History</span>
+          <span className="text-sm">Staff</span>
         </a>
       </li>
       {/* SIDEBAR: LOGOUT */}
