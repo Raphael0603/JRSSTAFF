@@ -1,4 +1,4 @@
-import DepartmentHeadDashboard from "../pages/department_head/DepartmentHeadDashboard";
+import DepartmentHeadDashboard from "../DepartmentHeadDashboard";
 import LogoJRS from "/src/assets/images/logo_JRS.png";
 
 function SideBarMenu() {

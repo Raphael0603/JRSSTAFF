@@ -1,8 +1,8 @@
-import SidebarMenu from "../../components/SideBarContent";
-import SideBarProfile from "../../components/SideBarProfile";
-import SideBarIcons from "../../components/SideBarIcons";
+import SidebarMenu from "./components/SideBarContent";
+import SideBarProfile from "./components/SideBarProfile";
+import SideBarIcons from "./components/SideBarIcons";
 import HorizontalNavBar from "../../components/HorizontalNavBar";
-import StatusCard from "../../components/StatusCard";
+import StatusCard from "./components/StatusCard";
 import NotificationAndCalendar from "../../components/NotificationAndCalendar";
 
 export default function DepartmentHeadDashboard() {
