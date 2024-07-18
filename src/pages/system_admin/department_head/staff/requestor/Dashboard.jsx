@@ -1,4 +1,3 @@
-import React from "react";
 import "remixicon/fonts/remixicon.css";
 import LogoJRS from "/src/assets/images/logo_JRS.png";
 import ProfilePic from "/src/assets/images/BabyKaren.jpg";
