@@ -1,6 +1,6 @@
 import ProfilePic from "/src/assets/images/kennimg.jpg";
 
-function SideBarProfile() {
+export default function Profile() {
   return (
     <div className="flex flex-col items-center text-center text-white mb-2 -mt-10">
       <img
@@ -13,5 +13,3 @@ function SideBarProfile() {
     </div>
   );
 }
-
-export default SideBarProfile;

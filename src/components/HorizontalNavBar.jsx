@@ -7,9 +7,13 @@ export default function HorizontalNavBar() {
       <a href="#" className="text-xs ml-8">
         joms@ustp.edu.ph +384-3478-984
       </a>
-      <a href="#" className="text-xs font-semibold underline ml-auto">
-        [Take USTP Harmonized Client Satisfaction Survey Online Version]
-      </a>
+      <div className="text-xs font-semibold underline ml-auto">
+        <select className="bg-yellow-400">
+          <option>Kenneth</option>
+          <option>Logout</option>
+          <option>My account</option>
+        </select>
+      </div>
     </div>
   );
 }
