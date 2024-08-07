@@ -1,44 +1,91 @@
+import { Outlet, useNavigate, useOutlet } from "react-router-dom";
 import SearchBar from "../../../components/SearchBar";
+import Table from "../../../components/Table";
+import ReusableViewButton from "../../../components/ReusableViewButton";
+import ReusablePreviousButton from "../../../components/ReusablePreviousButton";
+import ReusableNextButton from "../../../components/ReusableNextButton";
+import SendReportButton from "./SendReportButton";
+
+const tableHeaders = [
+  "Requester Id",
+  "Job Description",
+  "Job Type",
+  "Date Finished",
+  "Assigned to",
+  "Location",
+  "Estimimated Time",
+  "Action",
+];
 
 export default function Report() {
-  return <SearchBar title="Report" />;
+  const otherContent = useOutlet(); // Get the current outlet
+  const navigate = useNavigate();
+  const tableContent = [
+    [
+      "1. 20241",
+      "Broken Door",
+      "Carpenter",
+      "28 - 07 - 2024",
+      "John",
+      "3rd floor ICT Building Room 309",
+      "2-3 hours",
+      <>
+        <ReusableViewButton
+          onClick={() => navigate("/department_head/report/view")}
+        />
+      </>,
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+  ];
+  return (
+    <>
+      {otherContent ? (
+        <Outlet /> // Render nested routes if present
+      ) : (
+        <>
+          <SearchBar
+            title="Report Table(Total Job Finished in 6 months 33)"
+            showInput={true}
+          />
+          <Table
+            columns={8}
+            rows={tableContent.length}
+            content={tableContent}
+            headers={tableHeaders}
+          />
+          <div className="flex items-center justify-between ml-4 mr-4 text-sm">
+            <div className="flex items-center space-x-2 ">
+              <label htmlFor="rows-per-page" className="text-gray-700 ">
+                Rows per page:
+              </label>
+              <select
+                id="rows-per-page"
+                className="border border-gray-300 rounded-md px-2 py-1 text-gray-700 "
+              >
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>40</option>
+              </select>
+            </div>
+            <div>
+              <SendReportButton
+                onClick={() => navigate("/department_head/report/send_report")}
+              />
+              <ReusablePreviousButton />
+              <ReusableNextButton />
+            </div>
+          </div>
+        </>
+      )}
+    </>
+  );
 }
-
-// import HorizontalNavBar from "../../../components/HorizontalNavBar";
-// import Logo from "../../../components/Logo";
-// import SearchBar from "../../../components/SearchBar";
-// import SidebarItem from "../../../components/SidebarItem";
-// import SidebarItemDropDown from "../../../components/SidebarItemDropDown";
-// import MainBody from "../Dashboard/MainBody";
-// import Profile from "../Dashboard/Profile";
-// import SideBar from "../Dashboard/SideBar";
-
-// export default function Report() {
-//   return (
-//     <div className="text-gray-800 font-inter">
-//       <SideBar>
-//         <Logo />
-//         <Profile />
-//         <SidebarItem name="Home" />
-//         <SidebarItem name="My Profile" />
-//         <SidebarItemDropDown
-//           main_name="Job Request"
-//           sub_name1="Job Assigning"
-//           sub_name2="Job Ongoing"
-//           sub_name3="Job Completed"
-//         />
-//         <SidebarItem name="Employee" />
-//         <SidebarItem name="Reports" />
-//         <SidebarItem name="Referral" />
-//         <SidebarItem name="History" />
-//         <SidebarItem name="Certificate of Job Completion" />
-//         <SidebarItem name="Logout" />
-//       </SideBar>
-
-//       <MainBody>
-//         <HorizontalNavBar />
-//         <SearchBar title="Report" />
-//       </MainBody>
-//     </div>
-//   );
-// }

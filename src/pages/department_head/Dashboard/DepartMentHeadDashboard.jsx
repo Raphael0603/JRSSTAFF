@@ -1,14 +1,13 @@
 import Logo from "../../../components/Logo";
 import Profile from "./Profile";
 import HorizontalNavBar from "../../../components/HorizontalNavBar";
-import StatusCard from "../../../components/StatusCard1";
+import StatusCard from "../../../components/StatusCard";
 import NotificationAndCalendar from "../../../components/NotificationAndCalendar";
 import SideBar from "./SideBar";
 import MainBody from "./MainBody";
-import PageTitle from "../../../components/PageTitle";
 import SidebarItem from "../../../components/SidebarItem";
-import SidebarItemDropDown from "../../../components/SidebarItemDropDown";
 import { useNavigate, useOutlet } from "react-router-dom";
+import SearchBar from "../../../components/SearchBar";
 
 export default function DepartmentHeadDashboard() {
   const navigate = useNavigate();
@@ -24,30 +23,25 @@ export default function DepartmentHeadDashboard() {
           name="My Profile"
           onClick={() => navigate("/department_head/myprofile")}
         />
-        <SidebarItemDropDown
-          main_name="Job Request"
-          main_url="/department_head/job_request"
-          sub_items={[
-            {
-              name: "Job Assigning",
-              url: "/department_head/job_request/assign",
-            },
-            {
-              name: "Job Ongoing",
-              url: "/department_head/job_request/ongoing",
-            },
-            {
-              name: "Job Completed",
-              url: "/department_head/job_request/completed",
-            },
-          ]}
+        <SidebarItem
+          name="Job Request"
+          onClick={() => navigate("/department_head/job_assign")}
         />
+        <SidebarItem
+          name="Job Ongoing"
+          onClick={() => navigate("/department_head/job_ongoing")}
+        />
+        <SidebarItem
+          name="Job Completed"
+          onClick={() => navigate("/department_head/job_completed")}
+        />
+
         <SidebarItem
           name="Employee"
           onClick={() => navigate("/department_head/employee")}
         />
         <SidebarItem
-          name="Reports"
+          name="Report"
           onClick={() => navigate("/department_head/report")}
         />
         <SidebarItem
@@ -64,24 +58,23 @@ export default function DepartmentHeadDashboard() {
             navigate("/department_head/approving_of_job_completion")
           }
         />
-        <SidebarItem name="Logout" />
       </SideBar>
 
       <MainBody>
         <HorizontalNavBar />
         {otherContent || (
           <>
-            <PageTitle />
+            <SearchBar title="Dashboard" />
             <div className="flex p-6 gap-6">
               <StatusCard
                 title="Job Request"
-                count="0"
+                count={0}
                 bgColor="bg-yellow-400"
               />
-              <StatusCard title="Accepted" count="0" bgColor="bg-sky-200" />
-              <StatusCard title="Assigned" count="0" bgColor="bg-red-400" />
-              <StatusCard title="Completed" count="0" bgColor="bg-green-400" />
-              <StatusCard title="Referral" count="0" bgColor="bg-purple-400" />
+              <StatusCard title="Accepted" count={0} bgColor="bg-sky-200" />
+              <StatusCard title="Assigned" count={0} bgColor="bg-red-400" />
+              <StatusCard title="Completed" count={0} bgColor="bg-green-400" />
+              <StatusCard title="Referral" count={0} bgColor="bg-purple-400" />
             </div>
             <NotificationAndCalendar />
           </>

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import { useNavigate, useState } from "react-router-dom";
 import HomeSidebarIcon from "/src/assets/images/iconSideBarHome.png";
 
 export default function SidebarItemDropDown({
@@ -67,3 +67,15 @@ export default function SidebarItemDropDown({
     </div>
   );
 }
+
+// Define PropTypes for the component
+SidebarItemDropDown.propTypes = {
+  main_name: PropTypes.string.isRequired, // main_name is required and should be a string
+  main_url: PropTypes.string, // main_url is optional and should be a string
+  sub_items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired, // Each sub-item must have a name which is a required string
+      url: PropTypes.string, // Each sub-item may have a url which is an optional string
+    })
+  ).isRequired, // sub_items is required and should be an array of item objects
+};

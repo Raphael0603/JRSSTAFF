@@ -1,63 +1,61 @@
-import HistoryButton from "./HistoryButton";
-import ReusableNextButton from "../../../components/ReusableNextButton";
+import { Outlet, useNavigate, useOutlet } from "react-router-dom";
 import ReusablePreviousButton from "../../../components/ReusablePreviousButton";
-import ReusableViewButton from "../../../components/ReusableViewButton";
+import ReusableNextButton from "../../../components/ReusableNextButton";
 import SearchBar from "../../../components/SearchBar";
 import Table from "../../../components/Table";
-import { useNavigate, Outlet, useOutlet } from "react-router-dom";
-import EmployeeAddButton from "./EmployeeAddButton";
+import ReusableViewButton from "../../../components/ReusableViewButton";
+import ReusableButton from "../../../components/ReusableButton";
 
 const tableHeaders = [
   "Requester Id",
-  "Job",
-  "Staff Name",
-  "Date Hired",
-  "Schedule",
-  "Status",
+  "Job Description",
+  "Job Type",
+  "Date Finished",
+  "Assigned to",
+  "Location",
+  "Estimimated Time",
   "Action",
 ];
 
-export default function Employee() {
-  const otherContent = useOutlet();
+export default function HistoryContentView() {
   const navigate = useNavigate();
+  const otherContent = useOutlet();
   const tableContent = [
     [
       "1. 20241",
+      "Broken Door",
       "Carpenter",
-      "Cardo Dalisay",
-      "28 - 07 2024",
-      "Monday to Saturday",
-      "Active",
+      "28 - 07 - 2024",
+      "John",
+      "3rd floor ICT Building Room 309",
+      "2-3 hours",
       <>
         <ReusableViewButton
-          onClick={() => navigate("/department_head/employee/view")}
-        />
-
-        <HistoryButton
-          onClick={() => navigate("/department_head/employee/history")}
+          onClick={() =>
+            navigate("/department_head/history/content/information")
+          }
         />
       </>,
     ],
-    ["2."],
-    ["3."],
-    ["4."],
-    ["5."],
-    ["6."],
-    ["7."],
-    ["8."],
-    ["9."],
-    ["10."],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
   ];
-
   return (
     <>
       {otherContent ? (
         <Outlet /> // Render nested routes if present
       ) : (
         <>
-          <SearchBar title="Employee Table" showInput={true} name="view" />
+          <SearchBar title="Job Request History 2024" showInput={true} />
           <Table
-            columns={7}
+            columns={8}
             rows={tableContent.length}
             content={tableContent}
             headers={tableHeaders}
@@ -78,9 +76,12 @@ export default function Employee() {
               </select>
             </div>
             <div>
-              <EmployeeAddButton
-                onClick={() => navigate("/department_head/employee/add")}
-              />
+              <ReusableButton
+                border={`border border-black`}
+                onClick={() => navigate(-1)}
+              >
+                Back
+              </ReusableButton>
               <ReusablePreviousButton />
               <ReusableNextButton />
             </div>

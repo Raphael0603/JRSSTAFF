@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import HomeSidebarIcon from "/src/assets/images/iconSideBarHome.png";
 
 export default function SidebarItem({ name, onClick }) {
@@ -11,3 +12,9 @@ export default function SidebarItem({ name, onClick }) {
     </div>
   );
 }
+
+// Define PropTypes for the component
+SidebarItem.propTypes = {
+  name: PropTypes.string.isRequired, // name is required and should be a string
+  onClick: PropTypes.func, // onClick is optional and should be a function
+};

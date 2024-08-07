@@ -1,51 +1,66 @@
-export default function Table() {
-  const rows = 10;
-  const columns = 6;
+import PropTypes from "prop-types";
 
-  const tableRows = Array.from({ length: rows }, (_, rowIndex) => (
+export default function Table({
+  rows = 10,
+  columns = 6,
+  content = [],
+  headers = [],
+}) {
+  // Fill the content array with empty strings if not enough data is provided
+  const filledContent = Array.from({ length: rows }, (_, rowIndex) =>
+    Array.from({ length: columns }, (_, colIndex) =>
+      content[rowIndex] && content[rowIndex][colIndex] !== undefined
+        ? content[rowIndex][colIndex]
+        : ""
+    )
+  );
+
+  const tableRows = filledContent.map((rowContent, rowIndex) => (
     <tr key={rowIndex} className="border-b">
-      {Array.from({ length: columns }, (_, colIndex) => (
-        <td key={colIndex} className="px-4 py-3.5 text-left text-sm">
-          Content
+      {rowContent.map((cellContent, colIndex) => (
+        <td
+          key={colIndex}
+          className="w-20 px-2 h-12  text-left text-sm"
+          style={{ minWidth: "80px", minHeight: "48px" }} // Optional inline styles
+        >
+          {cellContent}
         </td>
       ))}
     </tr>
   ));
 
   return (
-    <div className="m-2 p-2">
-      <table className="min-w-full max-w-md divide-y divide-gray-200 shadow-lg rounded-lg">
+    <div className="m-2 px-2">
+      <table className="min-w-full max-w-md divide-y divide-black-200 shadow-2xl border border-black">
         <thead className="bg-gray-50">
           <tr>
             {Array.from({ length: columns }, (_, colIndex) => (
               <th
                 key={colIndex}
-                className="px-4 py-2 text-left text-sm text-gray-500"
+                className="w-20 h-12 px-4 py-2 text-left text-sm text-gray-500"
+                style={{ minWidth: "80px", minHeight: "48px" }} // Optional inline styles
               >
-                <b>Header</b>
+                {headers[colIndex]}
               </th>
             ))}
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">{tableRows}</tbody>
       </table>
-      <div className="flex items-center justify-between mt-2 text-sm">
-        <div className="flex items-center space-x-2">
-          <label htmlFor="rows-per-page" className="text-gray-700">
-            Rows per page:
-          </label>
-          <select
-            id="rows-per-page"
-            className="border border-gray-300 rounded-md px-2 py-1 text-gray-700"
-          >
-            <option>10</option>
-            <option>20</option>
-            <option>30</option>
-            <option>40</option>
-          </select>
-        </div>
-        <span className="text-gray-700">1-10 out of 80</span>
-      </div>
     </div>
   );
 }
+
+Table.propTypes = {
+  rows: PropTypes.number, // rows is optional and should be a number
+  columns: PropTypes.number, // columns is optional and should be a number
+  content: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.string, // Each cell can be a string
+        PropTypes.element, // Or it can be a React element (like a button)
+      ])
+    )
+  ),
+  headers: PropTypes.arrayOf(PropTypes.string), // headers should be an array of strings
+};

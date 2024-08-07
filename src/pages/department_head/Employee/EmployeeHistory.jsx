@@ -1,11 +1,10 @@
-import HistoryButton from "./HistoryButton";
-import ReusableNextButton from "../../../components/ReusableNextButton";
+import { useNavigate, useOutlet, Outlet } from "react-router-dom";
+import ReusableButton from "../../../components/ReusableButton";
 import ReusablePreviousButton from "../../../components/ReusablePreviousButton";
+import ReusableNextButton from "../../../components/ReusableNextButton";
 import ReusableViewButton from "../../../components/ReusableViewButton";
 import SearchBar from "../../../components/SearchBar";
 import Table from "../../../components/Table";
-import { useNavigate, Outlet, useOutlet } from "react-router-dom";
-import EmployeeAddButton from "./EmployeeAddButton";
 
 const tableHeaders = [
   "Requester Id",
@@ -17,7 +16,7 @@ const tableHeaders = [
   "Action",
 ];
 
-export default function Employee() {
+export default function EmployeeHistory() {
   const otherContent = useOutlet();
   const navigate = useNavigate();
   const tableContent = [
@@ -30,11 +29,7 @@ export default function Employee() {
       "Active",
       <>
         <ReusableViewButton
-          onClick={() => navigate("/department_head/employee/view")}
-        />
-
-        <HistoryButton
-          onClick={() => navigate("/department_head/employee/history")}
+          onClick={() => navigate("/department_head/employee/history/view")}
         />
       </>,
     ],
@@ -48,14 +43,13 @@ export default function Employee() {
     ["9."],
     ["10."],
   ];
-
   return (
     <>
       {otherContent ? (
         <Outlet /> // Render nested routes if present
       ) : (
         <>
-          <SearchBar title="Employee Table" showInput={true} name="view" />
+          <SearchBar title="Employee History" showInput={true} name="view" />
           <Table
             columns={7}
             rows={tableContent.length}
@@ -78,9 +72,12 @@ export default function Employee() {
               </select>
             </div>
             <div>
-              <EmployeeAddButton
-                onClick={() => navigate("/department_head/employee/add")}
-              />
+              <ReusableButton
+                border={`border border-black`}
+                onClick={() => navigate(-1)}
+              >
+                Back
+              </ReusableButton>
               <ReusablePreviousButton />
               <ReusableNextButton />
             </div>
