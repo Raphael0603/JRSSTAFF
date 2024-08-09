@@ -6,7 +6,7 @@ export default function Profile() {
       <img
         src={ProfilePic}
         alt="Profile"
-        className="w-16 h-16 rounded-full object-cover mb-2"
+        className="w-16 h-16 rounded-full  border border-black object-cover mb-2"
       />
       <p className="font-semibold text-xm">Kenneth Jhun N. Balino</p>
       <p className="text-xs">Department Head</p>

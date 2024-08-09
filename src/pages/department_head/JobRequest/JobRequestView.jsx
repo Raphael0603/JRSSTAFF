@@ -63,7 +63,7 @@ export default function JobAssignView() {
           <ReusableBackButton marginRight="mr-4" />
           <ReusableRemarksButton
             marginRight="mr-4"
-            onClick={() => navigate("/department_head/job_assign/remarks")}
+            onClick={() => navigate("/department_head/job_request/remarks")}
           />
           <ReusableAssignButton onClick={handleClick} />
         </div>

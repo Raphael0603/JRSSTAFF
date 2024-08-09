@@ -11,7 +11,7 @@ export default function History() {
         <Outlet /> // Render nested routes if present
       ) : (
         <>
-          <SearchBar title="Job Request" />
+          <SearchBar title="Job Request History" />
           <HistoryContent
             bgColor={`bg-blue-300`}
             title="Total of Finished Job Request"

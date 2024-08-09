@@ -48,7 +48,7 @@ export default function Referral() {
         <Outlet /> // Render nested routes if present
       ) : (
         <>
-          <SearchBar title="Referral" showInput={true} />
+          <SearchBar title="Referral Table" showInput={true} />
           <Table
             columns={8}
             rows={tableContent.length}

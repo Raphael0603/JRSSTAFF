@@ -35,7 +35,7 @@ export default function JobAssign() {
       "CITC Building 3rd floor Room 309",
       <>
         <ReusableViewButton
-          onClick={() => navigate("/department_head/job_assign/view")}
+          onClick={() => navigate("/department_head/job_request/view")}
         />
 
         <ReusableDropDownButton options={options} />
