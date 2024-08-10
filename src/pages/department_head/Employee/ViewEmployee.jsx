@@ -3,7 +3,7 @@ import ReusableContent from "../../../components/ReusableContent";
 import ReusableUpdateButton from "../../../components/ReusableUpdateButton";
 import SearchBar from "../../../components/SearchBar";
 
-export default function EmployeeView() {
+export default function ViewEmployee() {
   return (
     <>
       <SearchBar title="Employee Information" />

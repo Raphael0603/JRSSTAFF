@@ -1,12 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function HistoryContent({
-  title,
-  count,
-  year,
-  bgColor,
-  onClick,
-}) {
+export default function HistoryCard({ title, count, year, bgColor, onClick }) {
   return (
     <div
       className={`${bgColor} border-gray-100 p-5 shadow-md shadow m-4 w-96 h-48 cursor-pointer`}
@@ -25,7 +19,7 @@ export default function HistoryContent({
 }
 
 // Define PropTypes for the component
-HistoryContent.propTypes = {
+HistoryCard.propTypes = {
   title: PropTypes.string.isRequired, // title is required and should be a string
   count: PropTypes.number.isRequired, // count is required and should be a number
   bgColor: PropTypes.string, // bgColor is optional and should be a string

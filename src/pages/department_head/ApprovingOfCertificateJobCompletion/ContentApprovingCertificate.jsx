@@ -1,11 +1,13 @@
 import ReusableContent from "../../../components/ReusableContent";
 import SearchBar from "../../../components/SearchBar";
 import ReusableBackButton from "../../../components/ReusableBackButton";
+import ApproveCertificateButton from "./ApproveCertificateButton";
+import ImageCertificate from "./ImageCertificate";
 
-export default function HistoryContentViewInformation() {
+export default function ContentApprovingCertificate() {
   return (
     <>
-      <SearchBar title={`Job Request Information`} />
+      <SearchBar title={`Aprroving of Job Certificate Completion`} />
       <ReusableContent>
         <span>
           <b>Requestor Name:</b> Ricardo Dalisay
@@ -68,7 +70,11 @@ export default function HistoryContentViewInformation() {
           <b>Certficate of Job Completion: </b> Certficate.pdf
         </span>
         <div className="absolute bottom-4 right-4 flex">
-          <ReusableBackButton />
+          <ReusableBackButton marginRight="mr-4" />
+          <ApproveCertificateButton />
+        </div>
+        <div className="absolute top-4 right-4 border border-black">
+          <ImageCertificate />
         </div>
       </ReusableContent>
     </>

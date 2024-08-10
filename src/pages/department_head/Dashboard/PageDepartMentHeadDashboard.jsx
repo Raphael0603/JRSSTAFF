@@ -1,19 +1,17 @@
 import Logo from "../../../components/Logo";
 import Profile from "./Profile";
 import HorizontalNavBar from "../../../components/HorizontalNavBar";
-import StatusCard from "../../../components/StatusCard";
-import NotificationAndCalendar from "../../../components/NotificationAndCalendar";
 import SideBar from "./SideBar";
 import MainBody from "./MainBody";
 import SidebarItem from "../../../components/SidebarItem";
 import { useNavigate, useOutlet, Outlet } from "react-router-dom";
-import SearchBar from "../../../components/SearchBar";
 import iconHome from "../../../assets/images/iconHome.png";
 import iconProfile from "../../../assets/images/iconProfile.png";
 import iconRequest from "../../../assets/images/iconRequest.png";
 import iconEmployee from "../../../assets/images/iconEmployee.png";
 import iconReport from "../../../assets/images/iconReport.png";
 import iconDate from "../../../assets/images/iconDate.png";
+import ContentDashboard from "./ContentDashboard";
 
 export default function DepartmentHeadDashboard() {
   const navigate = useNavigate();
@@ -27,7 +25,7 @@ export default function DepartmentHeadDashboard() {
         <SidebarItem
           name="Home"
           image={iconHome}
-          onClick={() => navigate("/department_head")}
+          onClick={() => navigate("/department_head/home")}
         />
         <SidebarItem
           name="My Profile"
@@ -81,41 +79,7 @@ export default function DepartmentHeadDashboard() {
 
       <MainBody>
         <HorizontalNavBar />
-
-        {otherContent ? (
-          <Outlet />
-        ) : (
-          <>
-            <SearchBar title="Dashboard" />
-            <div className="flex p-6 gap-6">
-              <StatusCard
-                title="Job Request"
-                count={0}
-                bgColor="bg-yellow-400"
-                onClick={() => navigate("/department_head/job_request")}
-              />
-              <StatusCard
-                title="Ongoing"
-                count={0}
-                bgColor="bg-sky-200"
-                onClick={() => navigate("/department_head/job_ongoing")}
-              />
-              <StatusCard
-                title="Completed"
-                count={0}
-                bgColor="bg-green-400"
-                onClick={() => navigate("/department_head/job_completed")}
-              />
-              <StatusCard
-                title="Referral"
-                count={0}
-                bgColor="bg-purple-400"
-                onClick={() => navigate("/department_head/referral")}
-              />
-            </div>
-            <NotificationAndCalendar />
-          </>
-        )}
+        {otherContent ? <Outlet /> : <ContentDashboard />}
       </MainBody>
     </div>
   );

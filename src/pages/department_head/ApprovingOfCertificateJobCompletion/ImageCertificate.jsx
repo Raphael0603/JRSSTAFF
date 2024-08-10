@@ -1,6 +1,6 @@
 import CertificateOfJobCompletion from "/src/assets/images/certificateOfJobCompletion.png";
 
-export default function ApproveCertificate() {
+export default function ImageCertificate() {
   return (
     <img
       src={CertificateOfJobCompletion}

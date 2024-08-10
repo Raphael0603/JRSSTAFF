@@ -3,7 +3,7 @@ import ReusableContent from "../../../components/ReusableContent";
 import ReusableBackButton from "../../../components/ReusableBackButton";
 import ReusableSendButton from "../../../components/ReusableSendButton";
 
-export default function Remarks() {
+export default function ViewJobRequestRemarks() {
   return (
     <>
       <SearchBar title="Remarks" />

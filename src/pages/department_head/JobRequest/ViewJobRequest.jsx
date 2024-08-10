@@ -1,11 +1,27 @@
-import SearchBar from "../../../components/SearchBar";
 import ReusableContent from "../../../components/ReusableContent";
+import SearchBar from "../../../components/SearchBar";
+import ReusablePopUpMessage from "../../../components/ReusablePopUpMessage";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ReusableBackButton from "../../../components/ReusableBackButton";
+import ReusableAssignButton from "../../../components/ReusableAssignButton";
+import ReusableRemarksButton from "../../../components/ReusableRemarksButton";
 
-export default function EmployeeHistoryView() {
+export default function ViewJobRequest() {
+  const navigate = useNavigate();
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleClick = () => {
+    setShowMessage(true);
+  };
+
+  const handleClose = () => {
+    setShowMessage(false);
+  };
+
   return (
     <>
-      <SearchBar title="Employee Job Request Information" name="view" />
+      <SearchBar title="Job Request Information" />
       <ReusableContent>
         <p>
           <b>Requestor Name:</b> Ricardo Dalisay
@@ -32,9 +48,6 @@ export default function EmployeeHistoryView() {
           </select>
         </p>
         <p>
-          <b>Prioritization: </b> High
-        </p>
-        <p>
           <b>Job Prioritization: </b>
           <select>
             <option>Low</option>
@@ -44,20 +57,22 @@ export default function EmployeeHistoryView() {
         </p>
         <p>
           <b>Estimated Time of Completion: </b>
-          <input type="text" placeholder="1-2 Hours" />
-        </p>
-        <p>
-          <b>Date of Job Started: </b> 01/08/2024
-        </p>
-        <p>
-          <b>Date of Job Finished: </b> 01/08/2024
-        </p>
-        <p>
-          <b>Certificate of Job Completion: </b> Certificate.pdf
+          <input type="input" placeholder="1-2 Hours" />
         </p>
         <div className="absolute bottom-4 right-4 flex">
-          <ReusableBackButton />
+          <ReusableBackButton marginRight="mr-4" />
+          <ReusableRemarksButton
+            marginRight="mr-4"
+            onClick={() => navigate("/department_head/job_request/remarks")}
+          />
+          <ReusableAssignButton onClick={handleClick} />
         </div>
+        {showMessage && (
+          <ReusablePopUpMessage
+            message="Do you want to assign this job request to Leo?"
+            onClose={handleClose}
+          />
+        )}
       </ReusableContent>
     </>
   );

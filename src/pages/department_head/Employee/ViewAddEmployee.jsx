@@ -1,9 +1,9 @@
 import ReusableBackButton from "../../../components/ReusableBackButton";
 import ReusableContent from "../../../components/ReusableContent";
 import SearchBar from "../../../components/SearchBar";
-import EmployeeJobAddButton from "./EmployeeJobAddButton";
+import ViewAddEmployeeButton from "./ViewAddEmployeeButton";
 
-export default function SendReportView() {
+export default function ViewAddEmployee() {
   return (
     <>
       <SearchBar title="Add Employee" />
@@ -30,7 +30,7 @@ export default function SendReportView() {
 
         <div className="absolute bottom-4 right-4 flex">
           <ReusableBackButton marginRight={`mr-4`} />
-          <EmployeeJobAddButton />
+          <ViewAddEmployeeButton />
         </div>
       </ReusableContent>
     </>

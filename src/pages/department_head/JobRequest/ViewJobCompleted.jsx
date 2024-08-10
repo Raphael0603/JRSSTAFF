@@ -1,80 +1,62 @@
 import ReusableContent from "../../../components/ReusableContent";
 import SearchBar from "../../../components/SearchBar";
 import ReusableBackButton from "../../../components/ReusableBackButton";
-import ApproveCertificateButton from "./ApproveCertificateButton";
-import ApproveCertificate from "./ApprovingCertificate";
 
-export default function ApprovingContent() {
+export default function ViewJobCompleted() {
   return (
     <>
-      <SearchBar title={`Aprroving of Job Certificate Completion`} />
+      <SearchBar title="Job Completed Information" />
       <ReusableContent>
-        <span>
+        <p>
           <b>Requestor Name:</b> Ricardo Dalisay
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Job Description & Job Type: </b> Broken Door Knob : Carpenter
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Location: </b> CITC Building 3rd Floor Room - 309
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Image: </b>image.png
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Date Requested: </b> 01/08/2024
-        </span>
-        <br />
-        ----------------------------------------
-        <br />
-        <span>
+        </p>
+        <hr className="my-4" />
+        <p>
           <b>Staff Name: </b>
           <select>
             <option>Christian</option>
             <option>Leo</option>
             <option>Denzel</option>
           </select>
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Prioritization: </b> High
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Job Prioritization: </b>
           <select>
             <option>Low</option>
             <option>Medium</option>
             <option>High</option>
           </select>
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Estimated Time of Completion: </b>
           <input type="input" placeholder="1-2 Hours" />
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Date of Job Started: </b> 01/08/2024
-        </span>
-        <br />
-        <span>
+        </p>
+        <p>
           <b>Date of Job Finished: </b> 01/08/2024
-        </span>
-        <br />
-        <span>
-          <b>Certficate of Job Completion: </b> Certficate.pdf
-        </span>
+        </p>
+        <p>
+          <b>Certificate of Job Completion: </b> Certificate.pdf
+        </p>
         <div className="absolute bottom-4 right-4 flex">
-          <ReusableBackButton marginRight="mr-4" />
-          <ApproveCertificateButton />
-        </div>
-        <div className="absolute top-4 right-4 border border-black">
-          <ApproveCertificate />
+          <ReusableBackButton />
         </div>
       </ReusableContent>
     </>

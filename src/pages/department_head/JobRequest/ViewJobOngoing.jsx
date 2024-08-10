@@ -1,11 +1,11 @@
+import ReusableBackButton from "../../../components/ReusableBackButton";
 import ReusableContent from "../../../components/ReusableContent";
 import SearchBar from "../../../components/SearchBar";
-import ReusableBackButton from "../../../components/ReusableBackButton";
 
-export default function JobCompletedView() {
+export default function ViewJobOngoing() {
   return (
     <>
-      <SearchBar title="Job Completed Information" />
+      <SearchBar title="Job Ongoing Information" />
       <ReusableContent>
         <p>
           <b>Requestor Name:</b> Ricardo Dalisay
@@ -45,15 +45,6 @@ export default function JobCompletedView() {
         <p>
           <b>Estimated Time of Completion: </b>
           <input type="input" placeholder="1-2 Hours" />
-        </p>
-        <p>
-          <b>Date of Job Started: </b> 01/08/2024
-        </p>
-        <p>
-          <b>Date of Job Finished: </b> 01/08/2024
-        </p>
-        <p>
-          <b>Certificate of Job Completion: </b> Certificate.pdf
         </p>
         <div className="absolute bottom-4 right-4 flex">
           <ReusableBackButton />

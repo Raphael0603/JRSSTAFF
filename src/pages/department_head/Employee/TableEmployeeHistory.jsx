@@ -16,7 +16,7 @@ const tableHeaders = [
   "Action",
 ];
 
-export default function EmployeeHistory() {
+export default function TableEmployeeHistory() {
   const otherContent = useOutlet();
   const navigate = useNavigate();
   const tableContent = [

@@ -1,21 +1,15 @@
 import SearchBar from "../../../components/SearchBar";
 import ReusableContent from "../../../components/ReusableContent";
-import ProfileImageBox from "./ProfileImageBox";
-import ProfileInformationBox from "./ProfileInformationBox";
-import ProfileTab from "./ProfileTab";
-import UserInformation from "./UserInformation";
-import Header from "./Header";
-import { useNavigate, Outlet, useOutlet } from "react-router-dom";
+import ProfileContent from "./ContentProfile";
 
 export default function ProfilePage() {
-  const navigate = useNavigate();
-  const otherContent = useOutlet();
   return (
     <>
       <SearchBar title="Profile" />
 
       <ReusableContent>
-        <div className="flex justify-between items-start">
+        <ProfileContent />
+        {/* <div className="flex justify-between items-start">
           <ProfileImageBox />
 
           <ProfileInformationBox>
@@ -40,7 +34,7 @@ export default function ProfilePage() {
               </div>
             </Header>
           </ProfileInformationBox>
-        </div>
+        </div> */}
       </ReusableContent>
     </>
   );
