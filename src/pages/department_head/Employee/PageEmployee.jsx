@@ -1,5 +1,5 @@
 import { Outlet, useOutlet } from "react-router-dom";
-import ContentEmployee from "./ContentEmployee";
+import TableEmployee from "./TableEmployee";
 
 export default function Employee() {
   const otherContent = useOutlet();
@@ -9,7 +9,7 @@ export default function Employee() {
       {otherContent ? (
         <Outlet /> // Render nested routes if present
       ) : (
-        <ContentEmployee />
+        <TableEmployee />
       )}
     </>
   );

@@ -3,9 +3,9 @@ import ReusablePreviousButton from "../../../components/ReusablePreviousButton";
 import ReusableViewButton from "../../../components/ReusableViewButton";
 import SearchBar from "../../../components/SearchBar";
 import Table from "../../../components/Table";
-import EmployeeAddButton from "./EmployeeAddButton";
+import ButtonAddEmployeeTable from "./ButtonAddEmployeeTable";
 import { useNavigate } from "react-router-dom";
-import HistoryButton from "./HistoryButton";
+import ButtonHistory from "./ButtonHistory";
 
 const tableHeaders = [
   "Requester Id",
@@ -17,7 +17,7 @@ const tableHeaders = [
   "Action",
 ];
 
-export default function ContentEmployee() {
+export default function TableEmployee() {
   const navigate = useNavigate();
   const tableContent = [
     [
@@ -32,7 +32,7 @@ export default function ContentEmployee() {
           onClick={() => navigate("/department_head/employee/view")}
         />
 
-        <HistoryButton
+        <ButtonHistory
           onClick={() => navigate("/department_head/employee/history")}
         />
       </>,
@@ -72,7 +72,7 @@ export default function ContentEmployee() {
           </select>
         </div>
         <div>
-          <EmployeeAddButton
+          <ButtonAddEmployeeTable
             onClick={() => navigate("/department_head/employee/add")}
           />
           <ReusablePreviousButton />

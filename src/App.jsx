@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PageDepartMentHeadDashboard from "./pages/department_head/Dashboard/PageDepartMentHeadDashboard.jsx";
-import Report from "./pages/department_head/SendReport/Report";
+import PageReport from "./pages/department_head/SendReport/PageReport.jsx";
 import Login from "./pages/LogIn";
 import PageJobRequest from "./pages/department_head/JobRequest/PageJobRequest.jsx";
 import JobOngoing from "./pages/department_head/JobRequest/PageJobOngoing.jsx";
 import JobCompleted from "./pages/department_head/JobRequest/PageJobCompleted.jsx";
 import PageEmployee from "./pages/department_head/Employee/PageEmployee.jsx";
-import Referral from "./pages/department_head/Referral/Referral";
+import PageReferral from "./pages/department_head/Referral/PageReferral.jsx";
 import PageProfile from "./pages/department_head/Profile/PageProfile.jsx";
 import PageCertificate from "./pages/department_head/ApprovingOfCertificateJobCompletion/PageCertificate.jsx";
 import PageHistory from "./pages/department_head/JobRequestHistory/PageHistory.jsx";
@@ -49,7 +49,7 @@ export default function App() {
             <Route path="change_password" element={<ChangePassword />} />
           </Route>
           {/* Routes for Report */}
-          <Route path="report" element={<Report />}>
+          <Route path="report" element={<PageReport />}>
             <Route path="view" element={<ReportView />} />
             <Route path="send_report" element={<SendReportForm />} />
             <Route path="employee" element={<ViewAddEmployee />} />
@@ -64,7 +64,7 @@ export default function App() {
           </Route>
 
           {/* Routes for Referral */}
-          <Route path="referral" element={<Referral />}>
+          <Route path="referral" element={<PageReferral />}>
             <Route path="view" element={<ReferralJobRequestView />} />
           </Route>
 

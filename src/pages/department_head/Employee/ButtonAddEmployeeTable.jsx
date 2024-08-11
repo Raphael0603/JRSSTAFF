@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function EmployeeAddButton({
+export default function ButtonAddEmployeeTable({
   marginRight,
   marginLeft,
   margin = "m-2",
@@ -20,7 +20,7 @@ export default function EmployeeAddButton({
 }
 
 // Define PropTypes for the component
-EmployeeAddButton.propTypes = {
+ButtonAddEmployeeTable.propTypes = {
   marginRight: PropTypes.string, // Optional string for right margin
   marginLeft: PropTypes.string, // Optional string for left margin; default value provided
   margin: PropTypes.string, // Optional string for left margin; default value provided

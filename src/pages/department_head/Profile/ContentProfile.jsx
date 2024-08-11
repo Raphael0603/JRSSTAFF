@@ -1,4 +1,4 @@
-import Header from "./Header";
+import ContentAndHeader from "./ContentAndHeader";
 import ProfileImageBox from "./ProfileImageBox";
 import ProfileInformationBox from "./ProfileInformationBox";
 import ProfileTab from "./ProfileTab";
@@ -13,7 +13,9 @@ export default function ContentProfile() {
       <ProfileImageBox />
 
       <ProfileInformationBox>
-        <Header content={otherContent ? <Outlet /> : <UserInformation />}>
+        <ContentAndHeader
+          content={otherContent ? <Outlet /> : <UserInformation />}
+        >
           <div className="flex justify-end space-x-4">
             <ProfileTab
               name="User Account"
@@ -34,7 +36,7 @@ export default function ContentProfile() {
               }
             />
           </div>
-        </Header>
+        </ContentAndHeader>
       </ProfileInformationBox>
     </div>
   );

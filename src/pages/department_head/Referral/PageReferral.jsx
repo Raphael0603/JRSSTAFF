@@ -1,7 +1,7 @@
 import { Outlet, useOutlet } from "react-router-dom";
-import TableCertificate from "./TableCertificate";
+import TableReferral from "./TableReferral";
 
-export default function Approving() {
+export default function Referral() {
   const otherContent = useOutlet(); // Get the current outlet
 
   return (
@@ -9,9 +9,7 @@ export default function Approving() {
       {otherContent ? (
         <Outlet /> // Render nested routes if present
       ) : (
-        <>
-          <TableCertificate />
-        </>
+        <TableReferral />
       )}
     </>
   );

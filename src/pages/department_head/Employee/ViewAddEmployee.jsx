@@ -1,7 +1,7 @@
 import ReusableBackButton from "../../../components/ReusableBackButton";
 import ReusableContent from "../../../components/ReusableContent";
 import SearchBar from "../../../components/SearchBar";
-import ViewAddEmployeeButton from "./ViewAddEmployeeButton";
+import ButtonAddEmployee from "./ButtonAddEmployee";
 
 export default function ViewAddEmployee() {
   return (
@@ -30,7 +30,7 @@ export default function ViewAddEmployee() {
 
         <div className="absolute bottom-4 right-4 flex">
           <ReusableBackButton marginRight={`mr-4`} />
-          <ViewAddEmployeeButton />
+          <ButtonAddEmployee />
         </div>
       </ReusableContent>
     </>

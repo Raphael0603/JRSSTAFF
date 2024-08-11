@@ -1,7 +1,7 @@
 import ReusableContent from "../../../components/ReusableContent";
 import SearchBar from "../../../components/SearchBar";
 import ReusableBackButton from "../../../components/ReusableBackButton";
-import ApproveCertificateButton from "./ApproveCertificateButton";
+import ButtonApproveCertificate from "./ButtonApproveCertificate";
 import ImageCertificate from "./ImageCertificate";
 
 export default function ContentApprovingCertificate() {
@@ -71,7 +71,7 @@ export default function ContentApprovingCertificate() {
         </span>
         <div className="absolute bottom-4 right-4 flex">
           <ReusableBackButton marginRight="mr-4" />
-          <ApproveCertificateButton />
+          <ButtonApproveCertificate />
         </div>
         <div className="absolute top-4 right-4 border border-black">
           <ImageCertificate />

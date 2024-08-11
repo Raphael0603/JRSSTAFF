@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Header({ children, content }) {
+export default function ContentAndHeader({ children, content }) {
   return (
     <div className="h-[60vh] w-[100vh]">
       <div className="text-black  border-b w-[95%] mx-auto">
@@ -13,7 +13,7 @@ export default function Header({ children, content }) {
 }
 
 // Define PropTypes for the component
-Header.propTypes = {
+ContentAndHeader.propTypes = {
   children: PropTypes.node, // `children` can be any node (string, element, etc.)
   content: PropTypes.node,
 };

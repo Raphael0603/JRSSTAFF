@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function ApproveCertificateButton({ onClick, marginRight }) {
+export default function ButtonApproveCertificate({ onClick, marginRight }) {
   return (
     <button
       className={`bg-green-400 text-white px-3 ${marginRight} py-1 text-lg font-medium text-center rounded-lg`}
@@ -11,7 +11,7 @@ export default function ApproveCertificateButton({ onClick, marginRight }) {
   );
 }
 
-ApproveCertificateButton.propTypes = {
+ButtonApproveCertificate.propTypes = {
   onClick: PropTypes.func,
   marginRight: PropTypes.string,
 };

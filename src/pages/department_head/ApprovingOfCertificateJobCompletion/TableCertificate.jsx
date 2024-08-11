@@ -16,7 +16,7 @@ const tableHeaders = [
   "Action",
 ];
 
-export default function ContentCertificate() {
+export default function TableCertificate() {
   const navigate = useNavigate();
   const tableContent = [
     [
